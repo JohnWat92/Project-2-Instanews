@@ -11,18 +11,21 @@ header{
 .mainContainer{
     display:flex;
     flex-direction: column;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
-    height:80vh;
-
+    padding:1rem;
+    height:86vh;
 }
-
-.nytLogo{
-
+.selection{
+    font-size:.8rem;
+    text-align:center;
 }
-
-.selection .selector{
-    padding:2rem;
+.selector{
+    justify-content: center;
+    margin: 0 auto;
+    width:120px;
+    font-size:1.1rem;
+    height:25px;
 }
 
 footer{
@@ -31,6 +34,39 @@ footer{
 }
 .copyrightInfo{
  text-align:center;
- color:white;
+ color:#c2c2c2;
+ font-size:.9rem;
  font-family: 'Open Sans';
 }
+@media all and (min-width:600px){
+    .mainContainer{
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    }
+    .nytLogo{
+        // min-width:25%;
+        width:25%;
+        max-width:220px;
+
+    }
+    .nytLogo img{
+        height:auto;
+        width:100%;
+    }
+    .selection{
+        padding-right:6rem;
+        font-size:1rem;
+    }
+}
+    @media all and (min-width:1000px){
+        .mainContainer{
+        display:flex;
+        justify-content:flex-start;
+        }
+
+        footer{
+            justify-content: flex-start;
+            padding-left:1rem;
+        }
+    }
