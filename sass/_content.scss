@@ -1,6 +1,36 @@
 body{
     background-color:black;
 }
-p{
+
+header{
     color:white;
+    font-family: 'Open Sans',sans-serif;
+    font-style:normal;
+}
+
+.mainContainer{
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    height:80vh;
+
+}
+
+.nytLogo{
+
+}
+
+.selection .selector{
+    padding:2rem;
+}
+
+footer{
+    display:flex;
+    justify-content:center;
+}
+.copyrightInfo{
+ text-align:center;
+ color:white;
+ font-family: 'Open Sans';
 }
