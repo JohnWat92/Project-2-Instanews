@@ -51,13 +51,12 @@ footer {
     -ms-flex-pack: center;
         justify-content: center; }
   .nytLogo {
-    width: 25%;
-    max-width: 220px; }
+    width: 25%; }
   .nytLogo img {
     height: auto;
     width: 100%; }
   .selection {
-    padding-right: 6rem;
+    margin: 0 6rem 0 0;
     font-size: 1rem; } }
 
 @media all and (min-width: 1000px) {
@@ -66,6 +65,10 @@ footer {
     display: flex;
     -ms-flex-pack: start;
         justify-content: flex-start; }
+  .nytLogo img {
+    width: 220px; }
+  form {
+    margin: auto; }
   footer {
     -ms-flex-pack: start;
         justify-content: flex-start;

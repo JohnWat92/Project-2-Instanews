@@ -47,15 +47,16 @@ footer{
     .nytLogo{
         // min-width:25%;
         width:25%;
-        max-width:220px;
-
+        // max-width:220px;
     }
     .nytLogo img{
         height:auto;
         width:100%;
     }
     .selection{
-        padding-right:6rem;
+        // padding-right:6rem;
+         margin: 0 6rem 0 0 ;
+        // max-width:250px;
         font-size:1rem;
     }
 }
@@ -63,6 +64,16 @@ footer{
         .mainContainer{
         display:flex;
         justify-content:flex-start;
+        // width:40%;
+
+        }
+        .nytLogo img{
+            width:220px;
+        }
+        form{
+            margin: auto;
+            // padding-right:6rem;
+            // margin: 0 6rem 0 0 ;
         }
 
         footer{
