@@ -1,8 +1,11 @@
 // Built by LucyBot. www.lucybot.com
 $(document).ready(function(){
+
+  var $loadingMessage = $('#loading');
+  $loadingMessage.hide();
 $('select').on('change', function(){
   var category = $('#selector').val();
-
+  $loadingMessage.show();
   var url = 'https://api.nytimes.com/svc/topstories/v2/' + category + '.json';
 url += '?' + $.param({
   'api-key': '3d28473005934732a782b978011b1421'
@@ -16,6 +19,7 @@ $.ajax({
 
 .done(function(result) {
   console.log(result);
+  $loadingMessage.hide();
   var dataSet = result.results; 
 
   function mmCheck(dataSet){
@@ -27,7 +31,19 @@ console.log(filteredArray);
 var slicedArray = filteredArray.slice(0,12);
 console.log(slicedArray);
 
-$.each()
+$.each(slicedArray, function(index, value){
+  // console.log(value.abstract);
+  var abstract = value.abstract;
+  var siteURL = value.url;
+  var imageURL = value.multimedia[4].url;
+  var newsString = ' ';
+
+  newsString += '<li><a href=' + siteURL + ' target="_blank">';
+        newsString += '<p>'+ abstract +'</p>';
+        newsString += '<img src=" '+ imageURL +'">';
+        newsString += '</></a></li>';
+  $('.news').append(newsString);
+})
 
 
 
