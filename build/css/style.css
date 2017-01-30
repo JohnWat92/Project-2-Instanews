@@ -1,3 +1,12 @@
+.caps {
+  text-transform: uppercase;
+  font-family: 'Open Sans'; }
+
+body {
+  font-family: 'Open Sans';
+  font-style: normal;
+  color: white; }
+
 @font-face {
   font-family: 'Open Sans';
   src: url("../../fonts/OpenSans-Light-webfont.eot");
@@ -25,10 +34,6 @@
   src: url("../../fonts/OpenSans-BoldItalic-webfont.eot?#iefix") format("embedded-opentype"), url("../../fonts/OpenSans-BoldItalic-webfont.woff") format("woff"), url("../../fonts/OpenSans-BoldItalic-webfont.ttf") format("truetype"), url("../../fonts/OpenSans-BoldItalic-webfont.svg#open_sansbold_italic") format("svg");
   font-weight: bold;
   font-style: italic; }
-
-.caps {
-  text-transform: uppercase;
-  font-family: 'Open Sans'; }
 
 body {
   background-color: black; }
@@ -79,44 +84,48 @@ header {
       flex-wrap: wrap; }
 
 ul {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  width: 100%; }
+  display: -ms-flexbox;
+  display: flex; }
   ul li {
-    overflow: hidden;
     position: relative;
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
     height: 420px;
-    list-style: none;
-    box-sizing: border-box; }
+    list-style: none; }
     @media screen and (min-width: 600px) {
       ul li {
+        -ms-flex-direction: row;
+            flex-direction: row;
         -ms-flex-preferred-size: 50%;
             flex-basis: 50%; } }
     @media screen and (min-width: 1000px) {
       ul li {
         -ms-flex-preferred-size: 25%;
-            flex-basis: 25%; } }
+            flex-basis: 25%;
+        -ms-flex-direction: row;
+            flex-direction: row; } }
     ul li img {
-      position: absolute;
-      text-align: center;
-      width: auto;
       height: 100%;
-      -ms-flex-item-align: center;
-          -ms-grid-row-align: center;
-          align-self: center;
       z-index: -1; }
-      ul li img p {
-        -ms-flex-align: end;
-            align-items: flex-end; }
+    ul li #wrapper {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background: black;
+      background: rgba(0, 0, 0, 0.7); }
+      ul li #wrapper p {
+        font-size: 1rem;
+        color: white;
+        margin: .5rem;
+        line-height: 1.5; }
 
 footer {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: center;
       justify-content: center; }
+  footer p {
+    margin: 2rem; }
   @media screen and (min-width: 1000px) {
     footer {
       -ms-flex-pack: start;
@@ -135,12 +144,14 @@ footer {
     .nytLogo img {
       height: auto;
       width: 100%; }
-    .nytLogo .selection {
-      margin: 0 6rem 0 0;
-      font-size: 1rem; } }
+  .selection {
+    margin: 0 6rem 0 0;
+    font-size: 1rem; } }
 
 @media all and (min-width: 1000px) {
   .nytLogo img {
     width: 220px; }
   form {
-    margin: auto; } }
+    margin: auto;
+    padding-right: 6rem;
+    margin: 0 6rem 0 0; } }

@@ -38,40 +38,46 @@ header{
 .news{
     display:flex;
     flex-wrap: wrap;
-
 }
 
 ul {
-    align-self:center;
-    width:100%;
+    display:flex;
     li{
-        overflow:hidden;
+        // flex-direction:column;
         position:relative;
         flex-basis:100%;
         height:420px;
         list-style: none;
-        box-sizing: border-box;
         @include tablet{
+            flex-direction:row;
             flex-basis:50%;
             //  width:50%;
         }
 
         @include desktop{
             flex-basis:25%;
+            flex-direction:row;
             //  width:25%;
         }
 
         img{
-            position:absolute;
-           text-align:center;
-            width:auto;
+            // align-self:center;
             height:100%;
-            align-self:center;
             z-index:-1;
-        p{
-            align-items: flex-end;
         }
-}
+        #wrapper{
+            position: absolute;
+            bottom: 0;
+            width:100%;
+            background:rgb(0,0,0);
+            background:rgba(0,0,0,0.7);
+            p {
+                font-size:1rem;
+                color:white;
+                margin:.5rem;
+                line-height: 1.5;
+            }
+        }
     }
 }
 
@@ -79,6 +85,9 @@ ul {
 footer{
     display:flex;
     justify-content:center;
+    p{
+        margin:2rem;
+    }
     @include desktop{
         justify-content: flex-start;
         padding-left:1rem;
@@ -101,7 +110,9 @@ footer{
         img{
             height:auto;
             width:100%;
+            }
     }
+
     .selection{
         // padding-right:6rem;
          margin: 0 6rem 0 0 ;
@@ -109,16 +120,16 @@ footer{
         font-size:1rem;
     }
 }
-}
 
     @media all and (min-width:1000px){
 
         .nytLogo img{
             width:220px;
         }
+
         form{
             margin: auto;
-            // padding-right:6rem;
-            // margin: 0 6rem 0 0 ;
-}
+            padding-right:6rem;
+            margin: 0 6rem 0 0 ;
+            }
     }

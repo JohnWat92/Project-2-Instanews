@@ -38,8 +38,8 @@ $.each(slicedArray, function(index, value){
 
   listItem += '<li><a href=' + siteURL + ' target="_blank">';
         listItem += '<img src=" '+ imageURL +'">';
-        listItem += '<p>'+ abstract +'</p>';
-        listItem += '</></a></li>';
+        listItem += '<div id=wrapper><p>'+ abstract +'</p></div>';
+        listItem += '</a></li>';
   $('.news').append(listItem);
 })
 
