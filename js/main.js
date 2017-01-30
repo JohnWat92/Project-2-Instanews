@@ -1,4 +1,3 @@
-// Built by LucyBot. www.lucybot.com
 $(document).ready(function(){
 
   var $loadingMessage = $('#loading');
@@ -10,88 +9,43 @@ $('select').on('change', function(){
 url += '?' + $.param({
   'api-key': '3d28473005934732a782b978011b1421'
 });
-
+$('.news').empty();
 $.ajax({
   url: url,
   method: 'GET',
 })
 
-
 .done(function(result) {
   console.log(result);
   $loadingMessage.hide();
-  var dataSet = result.results; 
+  var nytDataSet = result.results; 
 
-  function mmCheck(dataSet){
-   return dataSet.multimedia.length == 5;
+  function mmCheck(nytDataSet){
+   return nytDataSet.multimedia.length === 5;
   }
-console.log(dataSet);
-var filteredArray = dataSet.filter(mmCheck)
-console.log(filteredArray); 
+// console.log(dataSet);
+var filteredArray = nytDataSet.filter(mmCheck)
+// console.log(filteredArray); 
 var slicedArray = filteredArray.slice(0,12);
-console.log(slicedArray);
+// console.log(slicedArray);
 
 $.each(slicedArray, function(index, value){
   // console.log(value.abstract);
   var abstract = value.abstract;
   var siteURL = value.url;
   var imageURL = value.multimedia[4].url;
-  var newsString = ' ';
+  var listItem = ' ';
 
-  newsString += '<li><a href=' + siteURL + ' target="_blank">';
-        newsString += '<p>'+ abstract +'</p>';
-        newsString += '<img src=" '+ imageURL +'">';
-        newsString += '</></a></li>';
-  $('.news').append(newsString);
+  listItem += '<li><a href=' + siteURL + ' target="_blank">';
+        listItem += '<img src=" '+ imageURL +'">';
+        listItem += '<p>'+ abstract +'</p>';
+        listItem += '</></a></li>';
+  $('.news').append(listItem);
 })
 
-
-
-  // var testedData
-  // function contentTest(dataSet.results.length)
-  // console.log(dataSet.results[0])
-  // console.log(dataSet.results[3].multimedia[4].url);
-  // function(dataSet.results){
-  // var multimedia = dataSet.results;
-  // console.log(multimedia.length)})
-
-
-// var array = [1, 2, 3, 4, 5, 54,43,23,321, 32,42,65];
-// function biggerThanForty(value){
-//   return value >40;
-// }
-
-// var newArray = array.filter(biggerThanForty);
-// console.log(newArray);
-
-  
-    // if (dataSet.results.length > 0) {
-
-    //   $.each(dataSet.results, function (index, value) {
-    //    var changeInput = $('.selector').val();
-    //    console.log(changeInput)
-    //     /*
-    //     set the newsImageLink to empty and only add
-    //     the image link if there is stuff in it
-    //      */
-    //     var newsImageLink='';
-    //     //debugger;
-    //     if ( value.multimedia.length){
-    //        newsImageLink = value.multimedia[3].url;
-    //       console.log(newsImageLink);
-    //     }
-         
-  //       $('.news').append('<li class="results_wrap"><h3 class="h1result">' + value.title + '</h3><img src=' + newsImageLink + ' /></li>');
-
-  //     })
-
-  //   }
-
-  //   else {
-  //     alert('got no data back from server');
-  // }
-}).fail(function(err) {
-  throw err;
-});
-// $('select').on('change')
+})
 })})
+// .fail(function(err) {
+//   throw err;
+// });
+// $('select').on('change')

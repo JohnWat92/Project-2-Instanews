@@ -9,16 +9,58 @@ header{
 }
 
 .mainContainer{
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding:1rem;
-    height:86vh;
+    padding: 1rem;
+    height: 86vh;
+    @include tablet {
+            flex-direction: row;
+            justify-content: center;
+        }
+
+    @include desktop {
+            justify-content: flex-start;
+        }
 }
 .selection{
     font-size:.8rem;
     text-align:center;
+}
+
+.news{
+    display:flex;
+    flex-wrap: wrap;
+    width:100%;
+
+}
+ul {
+    height:auto;
+    overflow-x:hidden;
+    text-align:center;
+}
+
+li{
+    flex-basis:100%;
+      margin: 0 auto;
+
+    box-sizing: border-box;
+    text-align:center;
+     @include tablet{
+         flex-basis:50%;
+         width:50%;
+     }
+
+     @include desktop{
+         flex-basis:25%;
+         width:25%;
+     }
+}
+img{
+    height:420px;
+    text-align:center;
+    overflow-x: hidden;
 }
 .selector{
     justify-content: center;
@@ -31,27 +73,28 @@ header{
 footer{
     display:flex;
     justify-content:center;
-}
-.copyrightInfo{
- text-align:center;
- color:#c2c2c2;
- font-size:.9rem;
- font-family: 'Open Sans';
-}
-@media all and (min-width:600px){
-    .mainContainer{
-    display:flex;
-    flex-direction:row;
-    justify-content:center;
+    @include desktop{
+        justify-content: flex-start;
+        padding-left:1rem;
     }
+}
+
+.copyrightInfo{
+    text-align:center;
+    color:#c2c2c2;
+    font-size:.9rem;
+    font-family: 'Open Sans';
+}
+
+@media all and (min-width:600px){
+
     .nytLogo{
         // min-width:25%;
         width:25%;
         // max-width:220px;
-    }
-    .nytLogo img{
-        height:auto;
-        width:100%;
+        img{
+            height:auto;
+            width:100%;
     }
     .selection{
         // padding-right:6rem;
@@ -60,13 +103,10 @@ footer{
         font-size:1rem;
     }
 }
-    @media all and (min-width:1000px){
-        .mainContainer{
-        display:flex;
-        justify-content:flex-start;
-        // width:40%;
+}
 
-        }
+    @media all and (min-width:1000px){
+
         .nytLogo img{
             width:220px;
         }
@@ -74,10 +114,5 @@ footer{
             margin: auto;
             // padding-right:6rem;
             // margin: 0 6rem 0 0 ;
-        }
-
-        footer{
-            justify-content: flex-start;
-            padding-left:1rem;
-        }
+}
     }
