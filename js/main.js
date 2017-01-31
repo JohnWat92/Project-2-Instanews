@@ -50,6 +50,7 @@ $.each(slicedArray, function(index, value){
 )
 
 .fail(function(err) {
+    $preloader.hide();
  $('.news').append('Sorry cannot connect to the server');
 })
 //  .always(function(){
