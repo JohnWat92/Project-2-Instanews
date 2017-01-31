@@ -4,7 +4,10 @@ $(document).ready(function(){
   $preloader.hide();
 $('select').on('change', function(){
   var category = $('#selector').val();
+  $('header').switchClass( 'mainContainer', 'contentContainer', 1000, 'easeInOutQuad') ;
+  $('header').switchClass('nytLogo','nytLogoWithContent', 1000, 'easeInOutQuad');
   $preloader.show();
+// $( '.nytLogo' ).addClass( '.logoWithArticle');
   var url = 'https://api.nytimes.com/svc/topstories/v2/' + category + '.json';
 url += '?' + $.param({
   'api-key': '3d28473005934732a782b978011b1421'
@@ -45,7 +48,6 @@ $.each(slicedArray, function(index, value){
 
 })
 })})
-// .fail(function(err) {
-//   throw err;
-// });
-// $('select').on('change')
+.fail(function(err) {
+  throw ('Sorry, cannot connect to New York Times');
+});
