@@ -1,10 +1,10 @@
 $(document).ready(function(){
 
-  var $loadingMessage = $('#loading');
-  $loadingMessage.hide();
+  var $preloader = $('#loader');
+  $preloader.hide();
 $('select').on('change', function(){
   var category = $('#selector').val();
-  $loadingMessage.show();
+  $preloader.show();
   var url = 'https://api.nytimes.com/svc/topstories/v2/' + category + '.json';
 url += '?' + $.param({
   'api-key': '3d28473005934732a782b978011b1421'
@@ -17,7 +17,7 @@ $.ajax({
 
 .done(function(result) {
   console.log(result);
-  $loadingMessage.hide();
+  $preloader.hide();
   var nytDataSet = result.results; 
 
   function mmCheck(nytDataSet){

@@ -18,30 +18,3 @@
 }
 
 
-// @mixin mobile{
-//   @media screen and (min-width: $mobile-width) {
-//       @content;
-//   }
-// }
-// @mixin tablet{
-// @media screen and (min-width: $tablet-Width) and (max-width: #{$desktop-Width - 1px}) {
-//   @content;
-// }
-// }
-// @mixin desktop{
-// @media screen and (min-width:  $desktop-Width) {
-//   @content;
-// }
-// }
-
-// @mixin tablet{
-//  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
-//    @content;
-//  }
-// }
-
-// @mixin desktop{
-//  @media (min-width: #{$desktop-width}) {
-//    @content;
-//  }
-// }

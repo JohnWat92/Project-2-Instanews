@@ -2,12 +2,6 @@ body{
     background-color:black;
 }
 
-header{
-    color:white;
-    font-family: 'Open Sans',sans-serif;
-    font-style:normal;
-}
-
 .mainContainer{
     display: flex;
     flex-direction: column;
@@ -49,8 +43,9 @@ ul {
         // flex-direction:column;
         position:relative;
         flex-basis:100%;
-        height:420px;
+        height:390px;
         list-style: none;
+        // align-self:center;
         @include tablet{
             flex-direction:row;
             flex-basis:50%;
@@ -86,7 +81,7 @@ ul {
 .content {
     text-align:center;
 }
-#loading img{
+#loader img{
     height:40px;
     text-align:center
 }
