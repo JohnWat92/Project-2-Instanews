@@ -46,8 +46,19 @@ $.each(slicedArray, function(index, value){
   $('.news').append(listItem);
 })
 
-})
-})})
+}
+)
+
 .fail(function(err) {
-  throw ('Sorry, cannot connect to New York Times');
+ $('.news').append('Sorry cannot connect to the server');
+})
+//  .always(function(){
+//    console.log('hello');
+//    $('#loader').hide();
+//  }
+
+
+})
+// .fail(function(err) {
+//   throw ('Sorry, cannot connect to New York Times');
 });
