@@ -37,9 +37,7 @@ body{
 }
 .nytLogo{
     @include tablet{
-    // min-width:25%;
     width:25%;
-    // max-width:220px;
     img{
         height:auto;
         width:100%;
@@ -82,9 +80,7 @@ body{
         margin:1rem;
     }
     @include tablet{
-        // padding-right:6rem;
          margin: 0 6rem 0 0 ;
-        // max-width:250px;
         font-size:1rem;
     }
 }
@@ -103,26 +99,21 @@ body{
 ul {
     display:flex;
     li{
-        // flex-direction:column;
         position:relative;
         flex-basis:100%;
         height:390px;
         list-style: none;
-        // align-self:center;
         @include tablet{
             flex-direction:row;
             flex-basis:50%;
-            //  width:50%;
         }
 
         @include desktop{
             flex-basis:25%;
             flex-direction:row;
-            //  width:25%;
         }
 
         img{
-            // align-self:center;
             height:100%;
             z-index:-1;
         }
