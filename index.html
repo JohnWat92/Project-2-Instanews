@@ -1,23 +1,25 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Instanews</title>
-    <meta name="a cool website that fetches content from NYT" content="Instanews NYT">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="build/css/style.min.css">
-  </head>
-  <body>
-    <header>
-        <div class = "mainContainer">
-          <div class= "nytLogo">
-            <img src= "images/nyt-logo.svg" alt="nyt-logo.svg" />
-          </div>
-          <div>
-          <form class= "selection">
-            <p> Choose a section: </p>
-          
-            <select id = "selector">
+
+<head>
+  <meta charset="utf-8">
+  <title>Instanews</title>
+  <meta name="a cool website that fetches content from NYT" content="Instanews NYT">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="build/css/style.min.css">
+</head>
+
+<body>
+  <header>
+    <div class="mainContainer">
+      <div class="nytLogo">
+        <img src="images/nyt-logo.svg" alt="nyt-logo.svg" />
+      </div>
+      <div>
+        <form class="selection">
+          <p> Choose a section: </p>
+
+          <select id="selector">
               <option value="sections" selected>Sections ...</option> 
               <option value="home">Home</option>
               <option value="science">Science</option>
@@ -27,22 +29,22 @@
               <option value="fashion">Fashion</option>
             </select>
         </form>
-        </div>
       </div>
-    </header>
-  
-    <section class="content"> 
-         <div id="loader">
-                <img src="images/ajax-loader.gif" alt="Pre-loader" />
-                <p>Loading Your Selected News </p>
-        </div>
-         <ul class= "news">  </ul> 
-    </section>
-    <footer>
-       <div class= "copyrightInfo">
-          <p> &copy; Copyright 2016 <span class="caps">instanews</span> </p>
-       </div>
-    </footer>
+    </div>
+  </header>
+
+  <section class="content">
+    <div id="loader">
+      <img src="images/ajax-loader.gif" alt="Pre-loader" />
+      <p>Loading Your Selected News </p>
+    </div>
+    <ul class="news"> </ul>
+  </section>
+  <footer>
+    <div class="copyrightInfo">
+      <p> &copy; Copyright 2016 <span class="caps">instanews</span> </p>
+    </div>
+  </footer>
   <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
   <script src="build/js/main.min.js"></script>
