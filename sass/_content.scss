@@ -27,7 +27,7 @@ body{
     height: 40vh;
     @include tablet {
             flex-direction: row;
-            justify-content: center;
+            justify-content: flex-start;
             height: 20vh;
         }
 
