@@ -1,11 +1,10 @@
 $(document).ready(function () {
-
   var $preloader = $('#loader');
   $preloader.hide();
   $('select').on('change', function () {
     var category = $('#selector').val();
-    $('header').switchClass('mainContainer', 'contentContainer', 1000, 'easeInOutQuad');
-    $('header').switchClass('nytLogo', 'nytLogoWithContent', 1000, 'easeInOutQuad');
+    $('header').addClass('contentContainer' );
+    $('header').addClass('nytLogoWithContent');
     $preloader.show();
     var url = 'https://api.nytimes.com/svc/topstories/v2/' + category + '.json';
     url += '?' + $.param({
@@ -17,36 +16,31 @@ $(document).ready(function () {
       method: 'GET',
     })
 
-      .done(function (result) {
-        console.log(result);
-        $preloader.hide();
-        var nytDataSet = result.results;
-
-        function mmCheck(nytDataSet) {
-          return nytDataSet.multimedia.length === 5;
-        }
-        var filteredArray = nytDataSet.filter(mmCheck)
-        var slicedArray = filteredArray.slice(0, 12);
-
-        $.each(slicedArray, function (index, value) {
-          var abstract = value.abstract;
-          var siteURL = value.url;
-          var imageURL = value.multimedia[4].url;
-          var listItem = ' ';
-
-          listItem += '<li><a href=' + siteURL + ' target="_blank">';
-          listItem += '<img src=" ' + imageURL + '">';
-          listItem += '<div id=wrapper><p>' + abstract + '</p></div>';
-          listItem += '</a></li>';
-          $('.news').append(listItem);
-        })
-
+    .done(function (result){
+      $preloader.hide();
+      var nytDataSet = result.results;
+      function multimediaCheck(nytDataSet){
+        return nytDataSet.multimedia.length === 5;
       }
-      )
+      var nytFilterDataSetArray = nytDataSet.filter(multimediaCheck).slice(0, 12);
+      $.each(nytFilterDataSetArray, function (index, value){
+        var abstract = value.abstract;
+        var title = value.title;
+        var siteURL = value.url;
+        var imageURL = value.multimedia[4].url;
+        var listItem = '';
 
-      .fail(function (err) {
-        $preloader.hide();
-        $('.news').append('Sorry cannot connect to the server');
+        listItem += '<li><a href=' + siteURL + ' target="_blank">';
+        listItem += '<img src=" ' + imageURL + '">';
+        listItem += '<div class = "articleTitle"><p>' + title + '</p></div>';
+        listItem += '<div id="wrapper"><p>' + abstract + '</p></div>';
+        listItem += '</a></li>';
+        $('.news').append(listItem);
       })
-  })
+    })
+    .fail(function (err) {
+      $('.news').append('<li class = "errorMessage"> Sorry cannot connect to the server </li>');
+    }).always(function (){
+      $preloader.hide();
+    });  })
 });
