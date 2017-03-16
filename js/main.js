@@ -32,13 +32,13 @@ $(document).ready(function () {
 
         listItem += '<li><a href=' + siteURL + ' target="_blank">';
         listItem += '<img src=" ' + imageURL + '">';
-        listItem += '<div class = "articleTitle"><p>' + title + '</p></div>';
+        listItem += '<div class="articleTitle"><p>' + title + '</p></div>';
         listItem += '<div id="wrapper"><p>' + abstract + '</p></div>';
         listItem += '</a></li>';
         $('.news').append(listItem);
       })
     })
-    .fail(function (err) {
+    .fail(function () {
       $('.news').append('<li class = "errorMessage"> Sorry cannot connect to the server </li>');
     }).always(function (){
       $preloader.hide();

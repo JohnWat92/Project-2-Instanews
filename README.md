@@ -1,11 +1,14 @@
-Technologies Used:
+![Science-Instanews](./images/science-instanews.png)
+![Sports-Instanews](./images/sports-instanews.png)
+***Technologies Used:***
 
-  In this project, I recreated a website that retrieves data from New York Times website so we can display 
-  it on our own by using API keys, JSONP, and ajax. I also used node.js and gulp to conveniently compile my SCSS files 
+  * In this project, I recreated a website that retrieves data from New York Times website so we can display it on our own by using API keys, JSONP, and ajax
+  * Used node.js and gulp to conveniently compile my SCSS files 
   into css which conveniently helped me code more efficiently with a variety of extra functions it provides such as 
   browsersync and eslint. 
-  
-Personal Learnings:
+  * Incorporated responsive design, so it is build from mobile first, with tablet and desktop widths
+![Tablet-instanews](./images/tablet-instanews.png)
+***Personal Learnings:***
 
   This project was very entertaining to do, it was amazing to think we can already retrieve data and sort the ones I
   want from a company as big as New York Times. Gulp also made compiling and coding so much more convenient because 
