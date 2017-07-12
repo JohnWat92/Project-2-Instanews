@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(function(){
   var $preloader = $('#loader');
   $preloader.hide();
   $('select').selectric().on('change', function () {
@@ -40,5 +40,6 @@ $(document).ready(function () {
       $('.news').append('<li class = "errorMessage"> Sorry cannot connect to the server </li>');
     }).always(function (){
       $preloader.hide();
-    });  })
+    });
+  })
 });
