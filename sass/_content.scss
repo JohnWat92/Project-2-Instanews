@@ -100,7 +100,10 @@ body{
     transition: max-height 0.2s linear;
 }
 li:hover #wrapper{
-    max-height:30%;
+    max-height:50%;
+    p:hover{
+        color:lightgrey;
+    }
 }
 .news{
     display:flex;
@@ -131,15 +134,20 @@ ul {
         }
         .articleTitle{
              position:absolute;
+             display:flex;
+             align-items:center;
+             text-align: center;
+             justify-content:center;
              top:0;
              font-family: 'Open Sans', sans-serif;
              width:100%;
              font-size:1.5rem;
             //  font-weight:bold;
+            min-height:16%;
              text-align:center;
              background:rgb(0,0,0);
              background:rgba(0,0,0,0.7);
-             transition: height .2s linear;
+             transition: height .5s linear;
              p{
                 font-family: 'Open Sans', sans-serif;
                 z-index:10;
@@ -147,6 +155,9 @@ ul {
                 color:white;
                 margin:.5rem;
                 line-height: 1.5;
+                &:hover{
+                    color:lightgrey;
+                }
              }
         }
         #wrapper{
@@ -158,7 +169,7 @@ ul {
             width:100%;
             background:rgb(0,0,0);
             background:rgba(0,0,0,0.7);
-           
+
             p {
                 font-family: 'Open Sans', sans-serif;
                 font-size:1rem;
@@ -195,4 +206,15 @@ footer{
 }
 .errorMessage{
     padding-left:1rem;
+}
+.selectric-scroll{
+    ul{
+        flex-direction: column;
+        li{
+            height: 40px;
+        }
+    }
+}
+.selectric-wrapper{
+    margin-left: 1rem;
 }

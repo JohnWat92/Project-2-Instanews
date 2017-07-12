@@ -1,7 +1,7 @@
 $(document).ready(function () {
   var $preloader = $('#loader');
   $preloader.hide();
-  $('select').on('change', function () {
+  $('select').selectric().on('change', function () {
     var category = $('#selector').val();
     $('header').addClass('contentContainer' );
     $('header').addClass('nytLogoWithContent');
@@ -15,7 +15,6 @@ $(document).ready(function () {
       url: url,
       method: 'GET',
     })
-
     .done(function (result){
       $preloader.hide();
       var nytDataSet = result.results;
@@ -29,7 +28,6 @@ $(document).ready(function () {
         var siteURL = value.url;
         var imageURL = value.multimedia[4].url;
         var listItem = '';
-
         listItem += '<li><a href=' + siteURL + ' target="_blank">';
         listItem += '<img src=" ' + imageURL + '">';
         listItem += '<div class="articleTitle"><p>' + title + '</p></div>';
@@ -38,7 +36,7 @@ $(document).ready(function () {
         $('.news').append(listItem);
       })
     })
-    .fail(function () {
+    .fail(function (){
       $('.news').append('<li class = "errorMessage"> Sorry cannot connect to the server </li>');
     }).always(function (){
       $preloader.hide();
