@@ -245,6 +245,7 @@ ul {
     ul li img {
       object-fit: cover;
       height: 100%;
+      width: 100%;
       z-index: -1; }
     ul li .articleTitle {
       position: absolute;
